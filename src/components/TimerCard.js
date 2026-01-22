@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch} from "react-redux";
+import { formatTime } from "../utils/formatTime";
 import {pauseTimer, resumeTimer, resetTimer, removeTimer} from "../features/timers/TimerSlice";
 
 function TimerCard({timer}) {
@@ -30,7 +31,7 @@ function TimerCard({timer}) {
     return (
         <div style={{ border: "1px solid #ccc", padding: 10, marginBottom: 10 }}>
       <h3>{timer.label}</h3>
-      <p>Elapsed Time: {Math.floor(displayTime / 1000)}s</p>
+      <p title={`${displayTime}ms`}>Elapsed Time: {formatTime(displayTime)}</p>
       <p>Status: {timer.isRunning ? "Running" : "Paused"}</p>
       {timer.isRunning ? (
         <button onClick={handlePause}>Pause</button>
