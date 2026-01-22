@@ -1,8 +1,14 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import TimerBoard from './components/TimerBoard';
 
 function App() {
-  return <h1>Timer App</h1>
+  return (
+    <div>
+      <h1>Timer App</h1>
+      <TimerBoard />
+    </div>
+  );
 }
 
 export default App;
