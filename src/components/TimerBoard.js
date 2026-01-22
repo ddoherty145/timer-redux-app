@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTimer } from "../features/timers/TimerSlice";
+import TimerCard from "./TimerCard";
 
 function TimerBoard() {
     const timers = useSelector((state) => state.timers);
@@ -15,13 +16,11 @@ function TimerBoard() {
         <div>
             <h2>All Timers</h2>
             <button onClick={handleAddTimer}>Add Timer</button>
-            <ul>
+            <div>
                 {timers.map((timer) => (
-                    <li key={timer.id}>
-                        <strong>{timer.label}</strong> - Elapsed: {Math.floor(timer.elapsed / 1000)}s
-                    </li>
+                    <TimerCard key={timer.id} timer={timer} />
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
