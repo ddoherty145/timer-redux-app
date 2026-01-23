@@ -3,10 +3,12 @@ import './App.css';
 import TimerBoard from './components/TimerBoard';
 
 function App() {
-  return (
+  return ( 
     <div>
       <h1>Timer App</h1>
-      <TimerBoard />
+      <div className="timer-board">
+        <TimerBoard />
+      </div>
     </div>
   );
 }
